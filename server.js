@@ -35,9 +35,9 @@ app.post("/api/create-preference", async (req, res) => {
       },
       statement_descriptor: "BRAZILIDADES",
       back_urls: {
-        success: "http://localhost:3000/?pagamento=sucesso",
-        failure: "http://localhost:3000/?pagamento=falha",
-        pending: "http://localhost:3000/?pagamento=pendente"
+        success: "https://brazilidades.onrender.com/?pagamento=sucesso",
+        failure: "https://brazilidades.onrender.com/?pagamento=falha",
+        pending: "https://brazilidades.onrender.com/?pagamento=pendente"
       },
       auto_return: "approved"
     };
