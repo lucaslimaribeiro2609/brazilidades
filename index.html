@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Brazilidades — Tudo do seu time de coração</title>
+  <meta name="description" content="Brazilidades — camisas de futebol sob encomenda, com entrega em até 7 dias úteis no RJ." />
+  <style>
+    :root{
+      --bg:#f5f5f5;--card:#fff;--text:#222;--muted:#6b6b6b;--brand:#ff6a00;--green:#00a650;
+      --line:#e7e7e7;--shadow:0 10px 28px rgba(0,0,0,.08);--radius:16px;
+    }
+    *{box-sizing:border-box} body{margin:0;font-family:Inter,Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text)}
+    a{text-decoration:none;color:inherit}.wrap{max-width:1180px;margin:auto;padding:0 18px}
+    .topbar{background:#111;color:#fff;font-size:13px;padding:8px 0;text-align:center}
+    header{position:sticky;top:0;z-index:30;background:#fff;border-bottom:1px solid var(--line)}
+    .head{display:flex;gap:22px;align-items:center;padding:14px 0}
+    .logo{font-weight:900;font-size:27px;letter-spacing:-1px}.logo b{color:var(--brand)}
+    .tag{font-size:12px;color:var(--muted)}
+    .brandblock{min-width:210px}
+    .search{flex:1;display:flex;border:1px solid #ddd;border-radius:10px;overflow:hidden;background:#fafafa}
+    .search input{flex:1;border:0;padding:13px 14px;background:transparent;outline:0;font-size:15px}
+    .search button{border:0;background:var(--brand);color:#fff;padding:0 18px;font-weight:800;cursor:pointer}
+    .cartbtn{border:1px solid #ddd;border-radius:10px;background:#fff;padding:12px 14px;font-weight:800;cursor:pointer}
+    .hero{margin:22px 0 18px;background:linear-gradient(115deg,#111 0%,#1e1e1e 58%,#ff6a00 140%);color:#fff;border-radius:22px;padding:34px;display:grid;grid-template-columns:1.3fr .7fr;gap:20px;align-items:center}
+    .hero h1{font-size:42px;margin:0 0 10px;line-height:1.03}.hero p{font-size:18px;color:#ddd;max-width:650px}
+    .hero .pill{display:inline-block;background:#fff;color:#111;border-radius:999px;padding:8px 12px;font-weight:800;font-size:13px;margin-bottom:14px}
+    .hero .cta{display:inline-block;background:var(--brand);color:#fff;padding:13px 18px;border-radius:10px;font-weight:900;margin-top:8px}
+    .herobox{background:#fff;color:#111;border-radius:16px;padding:18px;box-shadow:var(--shadow)}
+    .heroitem{display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-bottom:1px solid #eee}.heroitem:last-child{border:0}
+    .heroitem span{font-size:22px}.heroitem b{display:block}
+    .section-title{display:flex;justify-content:space-between;align-items:end;margin:24px 0 12px}.section-title h2{margin:0;font-size:26px}.section-title small{color:var(--muted)}
+    .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:0 4px 14px rgba(0,0,0,.03);transition:.2s}
+    .card:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+    .thumb{aspect-ratio:1/1;background:#eee;position:relative}.thumb img{width:100%;height:100%;object-fit:cover}
+    .badge{position:absolute;left:10px;top:10px;background:var(--brand);color:#fff;border-radius:6px;padding:5px 8px;font-size:11px;font-weight:900}
+    .info{padding:14px}.name{min-height:42px;font-size:15px;line-height:1.35}.rating{font-size:13px;color:#3578e5;margin:5px 0}
+    .price-old{color:#888;text-decoration:line-through;font-size:12px}.price{font-size:28px;font-weight:900;letter-spacing:-1px}
+    .pix{color:var(--green);font-weight:800;font-size:13px}.ship{font-size:12px;color:var(--green);margin-top:7px}
+    .buy{width:100%;border:0;border-radius:9px;background:#111;color:#fff;padding:11px;margin-top:10px;font-weight:900;cursor:pointer}
+    .buy:hover{background:#292929}
+    .trust{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:28px 0}.trust>div{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px}.trust b{display:block;margin-bottom:5px}
+    footer{margin-top:34px;background:#111;color:#ddd;padding:28px 0}footer strong{color:#fff}
+    .overlay{position:fixed;inset:0;background:rgba(0,0,0,.55);display:none;align-items:center;justify-content:center;z-index:100;padding:16px}
+    .modal{background:#fff;width:min(760px,100%);max-height:92vh;overflow:auto;border-radius:18px;padding:20px;position:relative}
+    .close{position:absolute;right:14px;top:12px;border:0;background:#eee;width:34px;height:34px;border-radius:50%;font-size:20px;cursor:pointer}
+    .checkout-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:22px}.summary{background:#fafafa;border:1px solid #eee;border-radius:14px;padding:14px}
+    .summary img{width:100%;border-radius:10px}.summary h3{margin:10px 0 5px}.summary .total{font-size:25px;font-weight:900}
+    label{display:block;font-size:13px;font-weight:800;margin:10px 0 5px}input,select{width:100%;padding:11px;border:1px solid #d9d9d9;border-radius:9px;font-size:14px}
+    .row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}.paybtn{width:100%;margin-top:14px;border:0;background:#009ee3;color:white;border-radius:10px;padding:14px;font-weight:900;font-size:16px;cursor:pointer}
+    .notice{font-size:12px;color:#666;margin-top:8px;line-height:1.4}.eta{background:#eaf8ef;border:1px solid #b9e6c8;padding:10px;border-radius:9px;color:#176b34;font-size:13px;margin-top:10px}
+    @media (max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}.hero{grid-template-columns:1fr}.checkout-grid{grid-template-columns:1fr}.brandblock{min-width:auto}.tag{display:none}}
+    @media (max-width:620px){.head{flex-wrap:wrap}.search{order:3;flex-basis:100%}.grid{grid-template-columns:1fr 1fr;gap:9px}.wrap{padding:0 10px}.hero{padding:24px 18px}.hero h1{font-size:32px}.info{padding:10px}.price{font-size:23px}.row2{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <div class="topbar">🚚 Entrega para o RJ em até 7 dias úteis • Compra segura</div>
+  <header>
+    <div class="wrap head">
+      <div class="brandblock">
+        <div class="logo">Brazili<b>dades</b></div>
+        <div class="tag">Aqui você encontra tudo do seu time de coração.</div>
+      </div>
+      <div class="search">
+        <input id="search" placeholder="Buscar camisa, time..." />
+        <button onclick="filterProducts()">Buscar</button>
+      </div>
+      <button class="cartbtn" onclick="openCart()">🛒 Comprar</button>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <div>
+        <span class="pill">⚽ SUA PAIXÃO, SEU MANTO</span>
+        <h1>Camisas para vestir o seu time de coração.</h1>
+        <p>Escolha o modelo, selecione o tamanho e finalize o pagamento online. No Rio de Janeiro, o prazo de entrega é de até 7 dias úteis.</p>
+        <a class="cta" href="#produtos">Ver camisas</a>
+      </div>
+      <div class="herobox">
+        <div class="heroitem"><span>💳</span><div><b>Pague online</b><small>Pix ou cartão, com parcelamento via Mercado Pago.</small></div></div>
+        <div class="heroitem"><span>📦</span><div><b>Produção sob encomenda</b><small>Você escolhe o tamanho antes de pagar.</small></div></div>
+        <div class="heroitem"><span>📍</span><div><b>Entrega no RJ</b><small>Prazo estimado: até 7 dias úteis.</small></div></div>
+      </div>
+    </section>
+
+    <div class="section-title" id="produtos">
+      <h2>Mais vendidos</h2><small>Escolha seu time</small>
+    </div>
+
+    <section class="grid" id="grid"></section>
+
+    <section class="trust">
+      <div><b>🔒 Pagamento protegido</b><span>Checkout preparado para integração com Mercado Pago.</span></div>
+      <div><b>📏 Tamanhos</b><span>P, M, G e GG selecionados antes da compra.</span></div>
+      <div><b>📲 Atendimento</b><span>Dados de telefone e entrega registrados no pedido.</span></div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap"><strong>Brazilidades</strong><br><small>Aqui você encontra tudo do seu time de coração. • RJ</small></div>
+  </footer>
+
+  <div class="overlay" id="overlay">
+    <div class="modal">
+      <button class="close" onclick="closeModal()">×</button>
+      <div class="checkout-grid">
+        <div class="summary">
+          <img id="mImg" alt="Produto"/>
+          <h3 id="mName"></h3>
+          <div>Tamanho: <b id="mSizeLabel">M</b></div>
+          <div class="total" id="mPrice"></div>
+          <div class="eta">🚚 Entrega para RJ: até <b>7 dias úteis</b> após a confirmação do pagamento.</div>
+        </div>
+        <form id="checkoutForm">
+          <h2 style="margin-top:0">Finalizar pedido</h2>
+          <input type="hidden" id="productId" />
+          <label>Tamanho</label>
+          <select id="size" required onchange="document.getElementById('mSizeLabel').textContent=this.value">
+            <option>P</option><option selected>M</option><option>G</option><option>GG</option>
+          </select>
+
+          <label>Nome completo</label>
+          <input id="name" required placeholder="Seu nome" />
+
+          <div class="row2">
+            <div><label>CEP</label><input id="cep" required inputmode="numeric" maxlength="9" placeholder="00000-000" /></div>
+            <div><label>Telefone</label><input id="phone" required placeholder="(21) 99999-9999" /></div>
+          </div>
+
+          <label>Endereço</label>
+          <input id="address" required placeholder="Rua, número, bairro, cidade - RJ" />
+
+          <label>Complemento</label>
+          <input id="complement" placeholder="Apto, bloco, referência..." />
+
+          <button class="paybtn" type="submit">Pagar com Mercado Pago</button>
+          <div class="notice">Ao clicar, a loja cria uma preferência de pagamento no servidor e redireciona para o checkout do Mercado Pago. Para funcionar em produção, configure o token conforme o README.</div>
+          <div id="status" class="notice"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+<script>
+const products = [
+  {id:"flamengo", name:"Camisa Flamengo Helanca", img:"assets/flamengo.svg", price:60, old:79.90, sold:"+100 vendidos"},
+  {id:"botafogo", name:"Camisa Botafogo Helanca", img:"assets/botafogo.svg", price:60, old:79.90, sold:"+80 vendidos"},
+  {id:"vasco", name:"Camisa Vasco Helanca", img:"assets/vasco.svg", price:60, old:79.90, sold:"+70 vendidos"},
+  {id:"fluminense", name:"Camisa Fluminense Helanca", img:"assets/fluminense.svg", price:60, old:79.90, sold:"+60 vendidos"}
+];
+let selected = products[0];
+
+function money(v){return v.toLocaleString("pt-BR",{style:"currency",currency:"BRL"})}
+function render(list=products){
+  document.getElementById("grid").innerHTML = list.map((p,i)=>`
+    <article class="card">
+      <div class="thumb"><img src="${p.img}" alt="${p.name}"><span class="badge">${i===0?"MAIS VENDIDO":"OFERTA"}</span></div>
+      <div class="info">
+        <div class="name">${p.name}</div>
+        <div class="rating">★ 4.9 | ${p.sold}</div>
+        <div class="price-old">${money(p.old)}</div>
+        <div class="price">${money(p.price)}</div>
+        <div class="pix">Pix ou cartão • parcele online</div>
+        <div class="ship">Chega no RJ em até 7 dias úteis</div>
+        <button class="buy" onclick="openProduct('${p.id}')">Escolher tamanho</button>
+      </div>
+    </article>`).join("");
+}
+function filterProducts(){
+  const q=document.getElementById("search").value.toLowerCase().trim();
+  render(products.filter(p=>p.name.toLowerCase().includes(q)));
+}
+document.getElementById("search").addEventListener("keydown",e=>{if(e.key==="Enter")filterProducts()});
+
+function openProduct(id){
+  selected=products.find(p=>p.id===id);
+  document.getElementById("productId").value=selected.id;
+  document.getElementById("mImg").src=selected.img;
+  document.getElementById("mName").textContent=selected.name;
+  document.getElementById("mPrice").textContent=money(selected.price);
+  document.getElementById("size").value="M";
+  document.getElementById("mSizeLabel").textContent="M";
+  document.getElementById("overlay").style.display="flex";
+}
+function openCart(){openProduct(selected.id)}
+function closeModal(){document.getElementById("overlay").style.display="none"}
+document.getElementById("overlay").addEventListener("click",e=>{if(e.target.id==="overlay")closeModal()});
+
+document.getElementById("checkoutForm").addEventListener("submit", async (e)=>{
+  e.preventDefault();
+  const status=document.getElementById("status");
+  status.textContent="Criando pagamento...";
+  const payload={
+    product:{id:selected.id,name:selected.name,price:selected.price},
+    size:document.getElementById("size").value,
+    customer:{
+      name:document.getElementById("name").value,
+      cep:document.getElementById("cep").value,
+      phone:document.getElementById("phone").value,
+      address:document.getElementById("address").value,
+      complement:document.getElementById("complement").value
+    }
+  };
+  try{
+    const res=await fetch("/api/create-preference",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(payload)});
+    const data=await res.json();
+    if(!res.ok) throw new Error(data.error||"Erro ao criar pagamento");
+    window.location.href=data.init_point;
+  }catch(err){
+    status.textContent="Para pagar de verdade, rode o servidor Node e configure o MP_ACCESS_TOKEN. Detalhes no README.";
+    console.error(err);
+  }
+});
+render();
+</script>
+</body>
+</html>

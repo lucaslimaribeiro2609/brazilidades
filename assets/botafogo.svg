@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="800" viewBox="0 0 800 800">
+    <defs>
+      <linearGradient id="bg" x1="0" x2="1">
+        <stop offset="0" stop-color="#f7f7f7"/>
+        <stop offset="1" stop-color="#ececec"/>
+      </linearGradient>
+      <filter id="s" x="-20%" y="-20%" width="140%" height="140%">
+        <feDropShadow dx="0" dy="18" stdDeviation="22" flood-opacity=".18"/>
+      </filter>
+    </defs>
+    <rect width="800" height="800" fill="url(#bg)"/>
+    <g filter="url(#s)">
+      <path d="M238 150 L320 105 L480 105 L562 150 L675 250 L595 355 L535 305 L535 680 L265 680 L265 305 L205 355 L125 250 Z"
+            fill="#111111" stroke="#111" stroke-width="8"/>
+      <path d="M320 105 C335 160 465 160 480 105" fill="#f5f5f5" stroke="#111" stroke-width="6"/>
+      <path d="M270 220 L530 220" stroke="#f5f5f5" stroke-width="28" opacity=".95"/>
+      <path d="M270 310 L530 310" stroke="#f5f5f5" stroke-width="28" opacity=".95"/>
+      <path d="M270 400 L530 400" stroke="#f5f5f5" stroke-width="28" opacity=".95"/>
+      <path d="M270 490 L530 490" stroke="#f5f5f5" stroke-width="28" opacity=".95"/>
+      <circle cx="400" cy="360" r="70" fill="#fff" opacity=".94"/>
+      <text x="400" y="382" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="58" font-weight="800" fill="#111111">BFR</text>
+    </g>
+    <text x="400" y="748" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="32" font-weight="700" fill="#222">Camisa Botafogo Helanca</text>
+    </svg>
